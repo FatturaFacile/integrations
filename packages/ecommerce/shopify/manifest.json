@@ -1,0 +1,26 @@
+{
+  "name": "@fatturafacile/integration-shopify",
+  "description": "Production-ready Shopify e-commerce synchronization, refunds and credit notes for FatturaFacile ERP",
+  "version": "1.0.0",
+  "author": "FatturaFacile Team",
+  "license": "MIT",
+  "category": "ecommerce",
+  "tier": 1,
+  "dependencies": {
+    "@fatturafacile/framework": "workspace:*",
+    "@fatturafacile/shared": "workspace:*"
+  },
+  "permissions": [
+    "invoices:read",
+    "invoices:write",
+    "customers:read",
+    "customers:write",
+    "products:read",
+    "products:write",
+    "payments:read",
+    "payments:write",
+    "webhooks:manage"
+  ],
+  "supportedErpVersion": ">=2.0.0",
+  "supportedPlatforms": ["node>=20"]
+}

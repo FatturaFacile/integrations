@@ -1,0 +1,22 @@
+{
+  "compactThresholdPercent": 50,
+  "maxBashOutputChars": 15000,
+  "permissions": {
+    "deny": [
+      "Read(./**/node_modules/**)",
+      "Read(./**/.pnpm-store/**)",
+      "Read(./**/.turbo/**)",
+      "Read(./**/dist/**)",
+      "Read(./**/build/**)",
+      "Read(./**/coverage/**)",
+      "Read(./**/.vitest/**)",
+      "Read(./**/test-results/**)",
+      "Read(./**/playwright-report/**)",
+      "Read(./**/*.lock)",
+      "Read(./**/*-lock.*)",
+      "Read(./**/composer.lock)",
+      "Read(./**/.env*)",
+      "Read(./**/auth.json)"
+    ]
+  }
+}

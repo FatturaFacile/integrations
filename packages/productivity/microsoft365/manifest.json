@@ -1,0 +1,20 @@
+{
+  "name": "@fatturafacile/integration-microsoft365",
+  "description": "Production Microsoft 365 Outlook emails, Calendar events, and OneDrive archiving for FatturaFacile ERP",
+  "version": "1.0.0",
+  "author": "FatturaFacile Team",
+  "license": "MIT",
+  "category": "productivity",
+  "tier": 1,
+  "dependencies": {
+    "@fatturafacile/framework": "workspace:*",
+    "@fatturafacile/shared": "workspace:*"
+  },
+  "permissions": [
+    "invoices:read",
+    "customers:read",
+    "settings:manage"
+  ],
+  "supportedErpVersion": ">=2.0.0",
+  "supportedPlatforms": ["node>=20"]
+}

@@ -1,0 +1,18 @@
+packages:
+  - 'packages/*'
+  - 'packages/ecommerce/*'
+  - 'packages/cms/*'
+  - 'packages/marketplaces/*'
+  - 'packages/payments/*'
+  - 'packages/shipping/*'
+  - 'packages/crm/*'
+  - 'packages/accounting/*'
+  - 'packages/identity/*'
+  - 'packages/productivity/*'
+  - 'packages/communication/*'
+  - 'packages/ai/*'
+  - 'packages/developer/*'
+  - 'apps/*'
+  - 'tools/*'
+allowBuilds:
+  esbuild: true

@@ -1,0 +1,21 @@
+{
+  "name": "@fatturafacile/integration-wordpress",
+  "description": "Production WordPress CMS customer portal, ERP widgets, and invoice download integration for FatturaFacile ERP",
+  "version": "1.0.0",
+  "author": "FatturaFacile Team",
+  "license": "MIT",
+  "category": "cms",
+  "tier": 1,
+  "dependencies": {
+    "@fatturafacile/framework": "workspace:*",
+    "@fatturafacile/shared": "workspace:*"
+  },
+  "permissions": [
+    "invoices:read",
+    "customers:read",
+    "customers:write",
+    "settings:manage"
+  ],
+  "supportedErpVersion": ">=2.0.0",
+  "supportedPlatforms": ["node>=20"]
+}

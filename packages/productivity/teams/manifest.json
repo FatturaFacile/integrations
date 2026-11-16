@@ -1,0 +1,19 @@
+{
+  "name": "@fatturafacile/integration-teams",
+  "description": "Production Microsoft Teams Adaptive Cards, invoice alerts, and approval notifications for FatturaFacile ERP",
+  "version": "1.0.0",
+  "author": "FatturaFacile Team",
+  "license": "MIT",
+  "category": "productivity",
+  "tier": 1,
+  "dependencies": {
+    "@fatturafacile/framework": "workspace:*",
+    "@fatturafacile/shared": "workspace:*"
+  },
+  "permissions": [
+    "invoices:read",
+    "webhooks:manage"
+  ],
+  "supportedErpVersion": ">=2.0.0",
+  "supportedPlatforms": ["node>=20"]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@fatturafacile/integration-abacus",
+  "version": "1.0.0",
+  "description": "Swiss Abacus ERP enterprise accounting and booking ledger integration for FatturaFacile ERP",
+  "license": "MIT",
+  "author": "FatturaFacile Team",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fatturafacile/framework": "workspace:*",
+    "@fatturafacile/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@fatturafacile/tsconfig": "workspace:*",
+    "@fatturafacile/vitest-config": "workspace:*",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}

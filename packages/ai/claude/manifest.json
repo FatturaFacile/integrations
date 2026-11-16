@@ -1,0 +1,35 @@
+{
+  "name": "@fatturafacile/integration-claude",
+  "description": "Production Anthropic Claude MCP (Model Context Protocol) Server for FatturaFacile ERP",
+  "version": "1.0.0",
+  "author": "FatturaFacile Team",
+  "license": "MIT",
+  "category": "ai",
+  "tier": 1,
+  "dependencies": {
+    "@fatturafacile/framework": "workspace:*",
+    "@fatturafacile/shared": "workspace:*"
+  },
+  "permissions": [
+    "invoices:read",
+    "invoices:write",
+    "customers:read",
+    "customers:write",
+    "mcp:expose"
+  ],
+  "supportedErpVersion": ">=2.0.0",
+  "supportedPlatforms": ["node>=20"],
+  "mcp": {
+    "enabled": true,
+    "tools": [
+      "fatturafacile_lookup_customer",
+      "fatturafacile_create_invoice",
+      "fatturafacile_list_invoices",
+      "fatturafacile_get_financial_summary"
+    ],
+    "resources": [
+      "fatturafacile://schema/invoice",
+      "fatturafacile://schema/customer"
+    ]
+  }
+}

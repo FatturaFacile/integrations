@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FatturaFacileIntegrationManifest",
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "version",
+    "author",
+    "license",
+    "category",
+    "dependencies",
+    "permissions",
+    "supportedErpVersion",
+    "supportedPlatforms"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^@fatturafacile/integration-[a-z0-9-]+$"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 280
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-.*)?$"
+    },
+    "author": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string",
+      "enum": ["MIT", "Apache-2.0"]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "ecommerce",
+        "cms",
+        "marketplaces",
+        "payments",
+        "shipping",
+        "crm",
+        "accounting",
+        "identity",
+        "productivity",
+        "communication",
+        "ai",
+        "developer"
+      ]
+    },
+    "tier": {
+      "type": "integer",
+      "enum": [1, 2, 3]
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "invoices:read",
+          "invoices:write",
+          "customers:read",
+          "customers:write",
+          "products:read",
+          "products:write",
+          "payments:read",
+          "payments:write",
+          "webhooks:manage",
+          "settings:manage",
+          "mcp:expose"
+        ]
+      }
+    },
+    "supportedErpVersion": {
+      "type": "string"
+    },
+    "supportedPlatforms": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "mcp": {
+      "type": "object",
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "tools": { "type": "array", "items": { "type": "string" } },
+        "resources": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "additionalProperties": false
+}

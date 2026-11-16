@@ -1,0 +1,22 @@
+{
+  "name": "@fatturafacile/integration-paypal",
+  "description": "Production PayPal captures, payments and webhook reconciliation integration for FatturaFacile ERP",
+  "version": "1.0.0",
+  "author": "FatturaFacile Team",
+  "license": "MIT",
+  "category": "payments",
+  "tier": 1,
+  "dependencies": {
+    "@fatturafacile/framework": "workspace:*",
+    "@fatturafacile/shared": "workspace:*"
+  },
+  "permissions": [
+    "invoices:read",
+    "invoices:write",
+    "payments:read",
+    "payments:write",
+    "webhooks:manage"
+  ],
+  "supportedErpVersion": ">=2.0.0",
+  "supportedPlatforms": ["node>=20"]
+}

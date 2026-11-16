@@ -1,0 +1,33 @@
+{
+  "name": "@fatturafacile/integration-cursor",
+  "description": "Production Cursor IDE MCP Server & Developer AI Agent Tools for FatturaFacile ERP",
+  "version": "1.0.0",
+  "author": "FatturaFacile Team",
+  "license": "MIT",
+  "category": "ai",
+  "tier": 1,
+  "dependencies": {
+    "@fatturafacile/framework": "workspace:*",
+    "@fatturafacile/shared": "workspace:*"
+  },
+  "permissions": [
+    "invoices:read",
+    "invoices:write",
+    "customers:read",
+    "products:read",
+    "mcp:expose"
+  ],
+  "supportedErpVersion": ">=2.0.0",
+  "supportedPlatforms": ["node>=20"],
+  "mcp": {
+    "enabled": true,
+    "tools": [
+      "cursor_query_erp_schema",
+      "cursor_test_invoice_creation",
+      "cursor_inspect_tenant_context"
+    ],
+    "resources": [
+      "fatturafacile://schema/openapi.json"
+    ]
+  }
+}

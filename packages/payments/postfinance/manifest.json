@@ -1,0 +1,24 @@
+{
+  "name": "@fatturafacile/integration-postfinance",
+  "description": "Swiss PostFinance Checkout payment gateway and reconciliation for FatturaFacile ERP",
+  "version": "1.0.0",
+  "author": "FatturaFacile Team",
+  "license": "MIT",
+  "category": "payments",
+  "tier": 3,
+  "dependencies": {
+    "@fatturafacile/framework": "workspace:*",
+    "@fatturafacile/shared": "workspace:*"
+  },
+  "permissions": [
+    "invoices:read",
+    "invoices:write",
+    "customers:read",
+    "customers:write",
+    "webhooks:manage"
+  ],
+  "supportedErpVersion": ">=2.0.0",
+  "supportedPlatforms": [
+    "node>=20"
+  ]
+}
