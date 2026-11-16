@@ -1,4 +1,4 @@
-import { FatturaFacileClient, Payment } from '@fatturafacile/openapi-sdk';
+import { CurrencyCode, FatturaFacileClient, Payment } from '@fatturafacile/openapi-sdk';
 import { Logger } from '@fatturafacile/shared';
 import { PayPalCapture } from '../domain/types.js';
 
@@ -17,7 +17,7 @@ export class PayPalPaymentSyncService {
     const payment = await this.erpClient.payments.register({
       invoiceId,
       amount: amountFloat,
-      currency: (capture.amount.currency_code.toUpperCase() as any) || 'EUR',
+      currency: (capture.amount.currency_code.toUpperCase() as CurrencyCode) || 'EUR',
       paymentMethod: 'paypal',
       externalTransactionId: capture.id,
       paidAt: capture.create_time,

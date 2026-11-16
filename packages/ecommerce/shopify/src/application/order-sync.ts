@@ -1,4 +1,5 @@
 import {
+  CurrencyCode,
   FatturaFacileClient,
   Invoice,
   CreateInvoiceRequest,
@@ -57,7 +58,7 @@ export class ShopifyOrderSyncService {
       await this.erpClient.payments.register({
         invoiceId: invoice.id,
         amount: parseFloat(order.current_total_price),
-        currency: (order.currency.toUpperCase() as any) || 'EUR',
+        currency: (order.currency.toUpperCase() as CurrencyCode) || 'EUR',
         paymentMethod: 'stripe',
         externalTransactionId: `shopify_${order.id}`,
         paidAt: new Date().toISOString()

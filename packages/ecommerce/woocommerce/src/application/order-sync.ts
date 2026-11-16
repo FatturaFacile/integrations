@@ -1,4 +1,5 @@
 import {
+  CurrencyCode,
   FatturaFacileClient,
   Invoice,
   CreateInvoiceRequest,
@@ -59,7 +60,7 @@ export class WooCommerceOrderSyncService {
       await this.erpClient.payments.register({
         invoiceId: invoice.id,
         amount: parseFloat(order.total),
-        currency: (order.currency.toUpperCase() as any) || 'EUR',
+        currency: (order.currency.toUpperCase() as CurrencyCode) || 'EUR',
         paymentMethod: 'credit_card',
         externalTransactionId: order.transaction_id || `wc_${order.id}`,
         paidAt: new Date().toISOString()

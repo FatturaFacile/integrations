@@ -3,16 +3,16 @@ import { DomainEvent } from '@fatturafacile/shared';
 export type EventHandler<T = Record<string, unknown>> = (event: DomainEvent<T>) => Promise<void>;
 
 export class EventBus {
-  private readonly subscribers = new Map<string, EventHandler<any>[]>();
+  private readonly subscribers = new Map<string, EventHandler<never>[]>();
 
   public subscribe<T = Record<string, unknown>>(eventName: string, handler: EventHandler<T>): () => void {
     const list = this.subscribers.get(eventName) ?? [];
-    list.push(handler);
+    list.push(handler as EventHandler<never>);
     this.subscribers.set(eventName, list);
 
     return () => {
       const current = this.subscribers.get(eventName) ?? [];
-      this.subscribers.set(eventName, current.filter((h) => h !== handler));
+      this.subscribers.set(eventName, current.filter((h) => (h as unknown) !== handler));
     };
   }
 
@@ -21,7 +21,7 @@ export class EventBus {
     const wildcardHandlers = this.subscribers.get('*') ?? [];
     const allHandlers = [...handlers, ...wildcardHandlers];
 
-    await Promise.all(allHandlers.map((h) => h(event)));
+    await Promise.all(allHandlers.map((h) => (h as EventHandler<T>)(event)));
   }
 
   public clear(): void {
