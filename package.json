@@ -23,7 +23,7 @@
     "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.12",
+    "@changesets/cli": "^3.0.3",
     "@types/node": "^22.13.4",
     "eslint": "^9.20.1",
     "prettier": "^3.5.1",
