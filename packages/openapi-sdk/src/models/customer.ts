@@ -35,4 +35,4 @@ export interface CreateCustomerRequest {
   metadata?: Record<string, unknown> | undefined;
 }
 
-export interface UpdateCustomerRequest extends Partial<CreateCustomerRequest> {}
+export type UpdateCustomerRequest = Partial<CreateCustomerRequest>;

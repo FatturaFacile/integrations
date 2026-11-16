@@ -1,5 +1,6 @@
 import {
   FatturaFacileClient,
+  InvoiceStatus,
   CreateInvoiceRequest
 } from '@fatturafacile/openapi-sdk';
 import { Logger } from '@fatturafacile/shared';
@@ -206,7 +207,7 @@ export class ClaudeMcpServer {
 
       case 'fatturafacile_list_invoices': {
         const page = Number(args['page'] || 1);
-        const status = args['status'] as any;
+        const status = args['status'] as InvoiceStatus;
         const list = await this.erpClient.invoices.list({ page, perPage: 20, status });
         return {
           jsonrpc: '2.0',

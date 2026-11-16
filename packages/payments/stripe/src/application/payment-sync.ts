@@ -1,4 +1,4 @@
-import { FatturaFacileClient, Payment } from '@fatturafacile/openapi-sdk';
+import { CurrencyCode, FatturaFacileClient, Payment } from '@fatturafacile/openapi-sdk';
 import { Logger } from '@fatturafacile/shared';
 import { StripePaymentIntent, StripeRefund } from '../domain/types.js';
 
@@ -17,7 +17,7 @@ export class StripePaymentSyncService {
     const payment = await this.erpClient.payments.register({
       invoiceId,
       amount: amountFloat,
-      currency: (paymentIntent.currency.toUpperCase() as any) || 'EUR',
+      currency: (paymentIntent.currency.toUpperCase() as CurrencyCode) || 'EUR',
       paymentMethod: 'stripe',
       externalTransactionId: paymentIntent.id,
       paidAt: new Date(paymentIntent.created * 1000).toISOString(),
