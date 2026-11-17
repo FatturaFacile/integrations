@@ -1,0 +1,15 @@
+﻿---
+description: Project Architecture & Coding Standards
+globs: *
+---
+
+# Project Architecture & Standards
+
+All AI coding directives, architecture rules, and verification commands are defined in the canonical root reference:
+See [AGENTS.md](../../AGENTS.md).
+
+## Key Principles:
+- Strict TypeScript (`strict: true`, zero `any`).
+- Always use `@fatturafacile/openapi-sdk` and `createErpClient()` from `@fatturafacile/shared` for ERP interactions.
+- Every connector extends `BaseConnector` (`@fatturafacile/framework`) and has a root `manifest.json`.
+- Verification: `pnpm typecheck`, `pnpm lint`, `pnpm test`.

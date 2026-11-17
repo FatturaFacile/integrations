@@ -1,0 +1,36 @@
+﻿# Universal AI Ignore Patterns
+.git/
+*.log
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+.env
+.env.*
+!.env.example
+coverage/
+build/
+dist/
+tmp/
+temp/
+out-tsc/
+.idea/
+.vs/
+.vscode/
+
+# Node.js / TypeScript / Monorepo specific
+node_modules/
+.pnpm-store/
+.turbo/
+.vitest/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+.sandbox/
+bazel-out/
+auth.json
+certs/*
+!certs/README.md
+Thumbs.db
+.DS_Store
