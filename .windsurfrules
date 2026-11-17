@@ -1,0 +1,9 @@
+﻿# Windsurf Rules
+
+See canonical project specification: [AGENTS.md](AGENTS.md)
+
+## Standards & Quality Gates
+- **Framework**: Node.js >=20, pnpm workspaces (`pnpm@12.18.0`), Turborepo, TypeScript strict mode.
+- **OpenAPI-First**: Exclusively consume `@fatturafacile/openapi-sdk` for ERP API calls. No manual DTOs or fetch.
+- **Connectors**: Inherit `BaseConnector` from `@fatturafacile/framework` with `manifest.json`.
+- **Quality Gates**: Execute `pnpm typecheck`, `pnpm lint`, and `pnpm test` before finalizing tasks.
