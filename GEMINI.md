@@ -1,7 +1,5 @@
-﻿# Gemini CLI Guidelines
+﻿# Gemini CLI Instructions
 
 @AGENTS.md
 
-## Execution Instructions
-- Refer to `@AGENTS.md` for project architecture, coding standards, and commands.
-- Verify all edits with `pnpm typecheck`, `pnpm lint`, and `pnpm test`.
+- **Gemini Override**: Enforce [AGENTS.md](AGENTS.md) as the sole source of truth; integrate directly into `dev` (never `main`, never PRs), pass all quality gates before push, and leave `git status` completely clean.

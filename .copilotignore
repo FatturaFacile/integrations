@@ -1,36 +1,41 @@
-﻿# Universal AI Ignore Patterns
-.git/
-*.log
+# Build & Dependencies
+bin/
+obj/
+vendor/
+node_modules/
+dist/
+build/
+.dart_tool/
+.astro/
+.angular/
+coverage/
+
+# Lockfiles & Generated Code
+package-lock.json
+pnpm-lock.yaml
+composer.lock
+pubspec.lock
+*.Designer.cs
+*.g.cs
+*.g.dart
+*.freezed.dart
+*.min.js
+*.min.css
+*.map
+
+# Databases, Logs & Temp Artifacts
 *.sqlite
 *.sqlite3
-*.sqlite-wal
 *.sqlite-shm
-.env
-.env.*
-!.env.example
-coverage/
-build/
-dist/
-tmp/
-temp/
-out-tsc/
-.idea/
-.vs/
-.vscode/
+*.sqlite-wal
+*.db
+*.log
+*.tmp
+_r.php
+run*.json
+dbg.done
 
-# Node.js / TypeScript / Monorepo specific
-node_modules/
-.pnpm-store/
-.turbo/
-.vitest/
-test-results/
-playwright-report/
-blob-report/
-playwright/.cache/
-.sandbox/
-bazel-out/
-auth.json
-certs/*
-!certs/README.md
-Thumbs.db
-.DS_Store
+# Git & Worktrees
+.git/
+.worktrees/
+*-wt*/
